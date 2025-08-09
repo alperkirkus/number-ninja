@@ -1,0 +1,76 @@
+@use 'variables' as *;
+
+// HTML root font-size
+html {
+  font-size: $base-font-size; // 1rem = 16px (desktop)
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 14px; // 1rem = 14px (tablet)
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 12px; // 1rem = 12px (mobile)
+  }
+}
+
+// Global reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-normal;
+  color: $text-primary;
+  background-color: $primary-bg;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: $font-weight-semibold;
+  margin-bottom: $space-sm;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-weight: $font-weight-medium;
+  transition: all 0.2s ease;
+  border-radius: $border-radius;
+
+  transform: translateY(0) scale(1);
+
+  &:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  &:focus {
+    outline: 2px solid $accent-color;
+    outline-offset: 2px;
+  }
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  border: 1px solid $text-secondary;
+  border-radius: $border-radius;
+  padding: $padding-sm;
+  color: $text-primary;
+
+  &:focus {
+    outline: none;
+    border-color: $accent-color;
+  }
+}

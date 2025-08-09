@@ -1,0 +1,43 @@
+@use 'variables' as *;
+
+.game {
+  display: grid;
+  height: 100vh;
+  gap: $space-sm;
+  grid-template-rows: $header-height 1fr $footer-height;
+  grid-template-columns: $sidebar-width 1fr;
+
+  grid-template-areas:
+    'header header'
+    'sidebar main'
+    'footer footer';
+
+  &__header {
+    grid-area: header;
+    background-color: $secondary-bg;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__sidebar {
+    grid-area: sidebar;
+
+    background-color: $secondary-bg;
+    justify-items: center;
+  }
+
+  &__main {
+    grid-area: main;
+
+    background-color: $main-bg;
+    justify-items: center;
+  }
+
+  &__footer {
+    grid-area: footer;
+
+    background-color: $secondary-bg;
+    justify-items: center;
+  }
+}

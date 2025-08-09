@@ -1,0 +1,89 @@
+// ============================================
+// COLOR PALETTE
+// ============================================
+
+// Background Colors (Dark Ninja Theme)
+$primary-bg: #0f0f23; // Ana arka plan (çok koyu mor)
+$secondary-bg: #1a1a2e; // Sidebar, header, cards
+$main-bg: #24244a; // Main area
+$tertiary-bg: #16213e; // Hover states
+
+// Text Colors
+$text-primary: #ffffff; // Ana yazı rengi
+$text-secondary: #b0b0b0; // İkincil yazı (labels, açıklamalar)
+$text-muted: #6c757d; // Çok soluk yazı
+
+// Accent Colors
+$accent-color: #e94560; // Ana vurgu rengi (buttons, links)
+$success-color: #4ecca3; // Başarı mesajları (doğru tahmin)
+$warning-color: #ffb142; // Uyarı mesajları (yakın tahmin)
+$danger-color: #ff6b6b; // Hata mesajları (yanlış tahmin)
+$info-color: #74c0fc; // Bilgi mesajları
+
+// ============================================
+// SPACING SYSTEM (REM)
+// ============================================
+
+$base-font-size: 16px; // REM calculation base
+
+// Spacing Scale
+$space-xs: 0.25rem; // 4px
+$space-sm: 0.5rem; // 8px
+$space-md: 0.75rem; // 12px
+$space-lg: 1rem; // 16px
+$space-xl: 1.5rem; // 24px
+
+// Component Specific Spacing
+$gap-size: $space-lg; // Grid gap
+$padding-sm: $space-md; // Small padding
+$padding-md: $space-lg; // Medium padding
+$padding-lg: $space-xl; // Large padding
+
+// ============================================
+// LAYOUT DIMENSIONS
+// ============================================
+
+$sidebar-width: 15.625rem; // 250px
+$header-height: 3.75rem; // 60px
+$footer-height: 4rem; // 64px
+$border-radius: 0.5rem; // 8px
+$border-radius-lg: 0.75rem; // 12px
+
+// ============================================
+// TYPOGRAPHY
+// ============================================
+
+// Font Families
+$font-family-primary:
+  'Segoe UI',
+  -apple-system,
+  BlinkMacSystemFont,
+  'Roboto',
+  sans-serif;
+
+// Font Weights
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Font Sizes (REM Scale)
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+
+// Line Heights
+$line-height-tight: 1.25;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+
+// ============================================
+// BREAKPOINTS
+// ============================================
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large: 1200px;
