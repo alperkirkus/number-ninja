@@ -1,6 +1,11 @@
-import { StorageManager } from './storage';
+import { NumberNinjaGame } from './game.js';
+import { StorageManager } from './storage.js';
+import { UIManager } from './ui.js';
 
-//Test
+//Initialize modules
+
+const game = new NumberNinjaGame();
 const storage = new StorageManager();
-console.log('Available: ', storage.isAvailable);
-console.log('Raw data: ', localStorage.getItem('numberNinja'));
+const ui = new UIManager(game, storage);
+
+ui.init();

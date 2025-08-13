@@ -30,8 +30,12 @@
   &__main {
     grid-area: main;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
     background-color: $main-bg;
-    justify-items: center;
   }
 
   &__footer {
