@@ -4,8 +4,7 @@ export class NumberNinjaGame {
     this.numberGenerator = this.createNumberGenerator(difficulty);
     this.targetNumber = this.numberGenerator.generate();
 
-    this.attempts = 0;
-    this.maxAttempts = 10;
+    this.remainingAttempts = 10;
     this.gameStatus = 'playing'; // playing, won, lost
   }
 
@@ -26,9 +25,19 @@ export class NumberNinjaGame {
     };
   }
   changeDifficulty(newDifficulty) {
+
     this.difficulty = newDifficulty;
     this.numberGenerator = this.createNumberGenerator(newDifficulty);
     this.targetNumber = this.numberGenerator.generate();
+    this.remainingAttempts = 10;
+
+
+
+   /*  difficultyLabel.textContent = this.difficulty.charAt(0).toUpperCase() + this.difficulty.slice(1);
+    numberRange.textContent = `(${this.numberGenerator.min}-${this.numberGenerator.max})`;
+    attemptsCount.textContent = 10;
+    hintInfo.textContent = ''; */
+
 
     console.log(this.targetNumber);
 
@@ -47,28 +56,36 @@ export class NumberNinjaGame {
         success: false,
         error: `Number must be between ${this.numberGenerator.min} and ${this.numberGenerator.max}`,
       };
-    }
-
-    this.attempts++;
+    } 
+    guess === this.targetNumber ? this.remainingAttempts : this.remainingAttempts--;
+    
 
     if (guess === this.targetNumber) {
       this.gameStatus = 'won';
-      return { success: true, result: 'won', attempts: this.attempts };
+      return { success: true, result: 'won', remainingAttempts: this.remainingAttempts };
+
     }
 
-    if (this.attempts >= this.maxAttempts) {
+    if (this.remainingAttempts <= 0) {
       this.gameStatus = 'lost';
-      return { success: true, result: 'lost', targetNumber: this.targetNumber };
+      return { success: true, result: 'lost', targetNumber: this.targetNumber,remainingAttempts: this.remainingAttempts };
     }
 
-    const hint = guess < this.targetNumber ? 'higher' : 'lower';
+    if(guess <= (this.targetNumber -5) || guess >= (this.targetNumber +5)){
+      return { success: true, result: 'continue', hint: 'Too cold',
+      remainingAttempts: this.remainingAttempts };
+    }
+
+    if(guess >= (this.targetNumber -5) || guess <= (this.targetNumber +5)){
+      return { success: true, result: 'continue', hint: 'Too hot',
+      remainingAttempts: this.remainingAttempts };
+    }
 
     return {
       success: true,
       result: 'continue',
       hint,
-      attempts: this.attempts,
-      remainingAttempts: this.maxAttempts - this.attempts,
+      remainingAttempts: this.remainingAttempts,
     };
   }
 }

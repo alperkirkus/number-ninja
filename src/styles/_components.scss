@@ -1,0 +1,124 @@
+@use 'variables' as *;
+
+.button {
+  // Base button styles
+  padding: $padding-md $padding-lg;
+  border: none;
+  border-radius: $border-radius;
+  font-size: $font-size-base;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  // Disabled state
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  // Hover effect
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  // Button variants
+  &--primary {
+    background-color: $primary-bg;
+    color: $text-primary;
+  }
+  &--secondary {
+    background-color: $secondary-bg;
+    color: $text-secondary;
+  }
+
+  &--success {
+    background-color: $success-color;
+    color: $success-color;
+  }
+
+  &--danger {
+    background-color: $warning-color;
+    color: $danger-color;
+  }
+}
+
+.error-message {
+  background-color: $accent-color;
+  display: none;
+  padding: $padding-sm;
+  border-radius: $border-radius;
+  margin: $space-sm auto 0;
+  font-size: $font-size-sm;
+  width: 25rem;
+  max-width: 25rem;
+  position: relative;
+  flex-shrink: 0;
+
+  &--visible {
+    display: block;
+  }
+}
+
+.success-message {
+  padding: $padding-sm;
+  border-radius: $border-radius;
+}
+
+.game-feedback {
+  margin-top: $space-sm;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+  width: 25rem;
+  max-width: 25rem;
+  margin: 0 auto;
+  align-items: center;
+
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.guess-input {
+  width: 100%;
+  padding: $padding-lg $padding-md;
+  font-size: $font-size-lg;
+  border: 2px solid $border-color;
+  border-radius: $border-radius;
+  background-color: $input-bg;
+  color: $text-primary;
+  text-align: center;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $accent-color;
+    box-shadow: 0 0 0 2px rgba($accent-color, 0.2);
+  }
+
+  &::placeholder {
+    color: $text-muted;
+    font-size: $font-size-base;
+  }
+}
+
+.submit-guess-button {
+  width: 50%;
+
+  padding: $padding-lg $padding-md;
+  font-size: $font-size-base;
+}
+
+.hint-info {
+  font-size: $font-size-base;
+  color: $text-primary;
+  font-weight: $font-weight-bold;
+}

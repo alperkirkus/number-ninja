@@ -3,10 +3,11 @@
 // ============================================
 
 // Background Colors (Dark Ninja Theme)
-$primary-bg: #0f0f23; // Ana arka plan (çok koyu mor)
+$primary-bg: #161622; // Ana arka plan (çok koyu mor)
 $secondary-bg: #1a1a2e; // Sidebar, header, cards
 $main-bg: #24244a; // Main area
 $tertiary-bg: #16213e; // Hover states
+$white-bg: #ffffff; // White background
 
 // Text Colors
 $text-primary: #ffffff; // Ana yazı rengi
@@ -87,3 +88,17 @@ $breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
 $breakpoint-large: 1200px;
+
+// ============================================
+// BORDER & INPUT STYLING
+// ============================================
+
+// Border Colors
+$border-color: #3c3c54; // Subtle purple-gray (between main-bg and tertiary-bg)
+$border-color-hover: #4a684c; // Slightly lighter for hover 4a4a68
+$border-color-focus: $accent-color; // Use accent color for focus
+
+// Input Styling
+$input-bg: $tertiary-bg; // #16213e (Existing tertiary background)
+$input-border: $border-color; // Consistent border
+$input-focus-border: $accent-color; // #e94560 for focus state

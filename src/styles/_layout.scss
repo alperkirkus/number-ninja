@@ -44,4 +44,54 @@
     background-color: $secondary-bg;
     justify-items: center;
   }
+
+  &-board {
+    text-align: center;
+
+    h2 {
+      margin: 0 auto $space-lg auto;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  &-feedback {
+    width: 25rem;
+    max-width: 25rem;
+    min-height: 8rem;
+    background-color: $main-bg;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
+/* 
+.game-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.hint-box {
+  background: #1a1a2e;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  min-width: 150px;
+  transition: background 0.3s ease;
+}
+
+.hint-box--visible {
+  display: block !important;
+}
+
+.hint-box--won {
+  background: green;
+  text-align: center;
+  font-weight: bold;
+} */
